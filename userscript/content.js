@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CodeForces Performance
 // @namespace    https://github.com/Coki628/cf-perf
-// @version      0.1
+// @version      1.0.0
 // @description  You can check your performance for each contest!
 // @author       Coki628
 // @include      https://codeforces.com/contests/with/*
