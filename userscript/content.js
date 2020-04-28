@@ -1,11 +1,13 @@
 // ==UserScript==
-// @name         CodeForces Performance
-// @namespace    https://github.com/Coki628/cf-perf
-// @version      1.0.0
-// @description  You can check your performance for each contest!
-// @author       Coki628
-// @include      https://codeforces.com/contests/with/*
-// @grant        none
+// @name            Codeforces Performance
+// @name:ja         Codeforces Performance
+// @namespace       https://github.com/Coki628/cf-perf
+// @version         1.0.2
+// @description     You can check your performance for each contest!
+// @description:ja  You can check your performance for each contest!
+// @author          Coki628
+// @include         https://codeforces.com/contests/with/*
+// @grant           none
 // ==/UserScript==
 
 // ---------- your settings hare ----------
