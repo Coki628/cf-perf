@@ -2,7 +2,7 @@
 // @name            Codeforces Performance
 // @name:ja         Codeforces Performance
 // @namespace       https://github.com/Coki628/cf-perf
-// @version         1.0.6
+// @version         1.0.7
 // @description     You can check your performance for each contest!
 // @description:ja  Codeforcesのコンテストでのパフォーマンス推定値を確認します。
 // @author          Coki628
@@ -90,6 +90,8 @@ $(function() {
         }
     }
 
+    // ソートが2重にかかってしまうので1回イベントをリセットする
+    $('table.user-contests-table th').unbind();
     // テーブルのソートを再設定
     $("table.user-contests-table").tablesorter({
         headers: {
