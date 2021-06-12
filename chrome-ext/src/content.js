@@ -23,3 +23,6 @@ for (i=0; i<tr.length; i++) {
     $perf.text(perf);
     $(td[5]).after($perf);
 }
+
+// ページ幅を狭くしたときにコンテンツがはみ出さないようにする
+$('#pageContent > div.datatable > div:nth-child(6)').css('overflow', 'scroll');
