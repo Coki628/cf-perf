@@ -101,4 +101,7 @@ $(function() {
             8: { sorter: false },
         }
     });
+
+    // ページ幅を狭くしたときにコンテンツがはみ出さないようにする
+    $('#pageContent > div.datatable > div:nth-child(6)').css('overflow', 'scroll');
 });
