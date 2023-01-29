@@ -10,6 +10,7 @@
 // @include         https://codeforces.com/contests/with/*
 // @grant           none
 // @require         https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js 
+// @require         https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js
 // ==/UserScript==
 
 // ---------- your settings hare ----------
