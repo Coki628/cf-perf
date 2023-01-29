@@ -2,13 +2,15 @@
 // @name            Codeforces Performance
 // @name:ja         Codeforces Performance
 // @namespace       https://github.com/Coki628/cf-perf
-// @version         1.0.9
+// @version         1.0.10
 // @description     You can check your performance for each contest!
 // @description:ja  Codeforcesのコンテストでのパフォーマンス推定値を確認します。
 // @author          Coki628
 // @license         MIT
 // @include         https://codeforces.com/contests/with/*
 // @grant           none
+// @require         https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js 
+// @require         https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js
 // ==/UserScript==
 
 // ---------- your settings hare ----------
