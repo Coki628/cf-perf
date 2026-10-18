@@ -23,7 +23,9 @@ const showPerf = 1;
 // ----------------------------------------
 
 let getColorType = function(x) {
-    if (x >= 3000) {
+    if (x >= 4000) {
+        return 'user-4000';
+    } else if (x >= 3000) {
         return 'user-legendary';
     } else if (3000 > x && x >= 2400) {
         return 'user-red';
