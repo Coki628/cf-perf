@@ -2,7 +2,7 @@
 // @name            Codeforces Performance
 // @name:ja         Codeforces Performance
 // @namespace       https://github.com/Coki628/cf-perf
-// @version         1.0.9
+// @version         1.1
 // @description     You can check your performance for each contest!
 // @description:ja  Codeforcesのコンテストでのパフォーマンス推定値を確認します。
 // @author          Coki628
@@ -69,8 +69,14 @@ $(function() {
         // パフォーマンス列を表示
         if (showPerf) {
             // パフォーマンスを計算
-            let prev = rate - change;
-            let perf = prev + change * 4;
+            let bonus = [500, 350, 250, 150, 100, 50];
+            let idx = tr.length - 1 - i;
+            let realChange = change - (idx < 6 ? bonus[idx] : 0);
+            let prev = idx < 6
+            ? 1400 + [...Array(idx)].reduce((s, _, j) =>
+                                            s + Number($(tr[tr.length - 1 - j]).find('td').eq(5).text()) - bonus[j], 0)
+            : rate - change;
+            let perf = prev + realChange * 4;
             // 列を追加
             let $perf = $rate.clone();
             $perf.text(perf);
