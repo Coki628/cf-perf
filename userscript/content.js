@@ -2,7 +2,7 @@
 // @name            Codeforces Performance
 // @name:ja         Codeforces Performance
 // @namespace       https://github.com/Coki628/cf-perf
-// @version         1.0.9
+// @version         1.1
 // @description     You can check your performance for each contest!
 // @description:ja  Codeforcesのコンテストでのパフォーマンス推定値を確認します。
 // @author          Coki628
@@ -23,7 +23,9 @@ const showPerf = 1;
 // ----------------------------------------
 
 let getColorType = function(x) {
-    if (x >= 3000) {
+    if (x >= 4000) {
+        return 'user-4000';
+    } else if (x >= 3000) {
         return 'user-legendary';
     } else if (3000 > x && x >= 2400) {
         return 'user-red';
@@ -51,6 +53,10 @@ $(function() {
     let th = $thead.find('th');
     let tr = $tbody.find('tr');
 
+    const bonus = [500, 350, 250, 150, 100, 50];
+    const first = $(tr[tr.length - 1]).find('td');
+    const isNewAccount = Number($(first[6]).text()) === Number($(first[5]).text());
+
     // ヘッダ行に列を追加
     if (showPerf) {
         let $head = $(th[6]).clone();
@@ -70,7 +76,21 @@ $(function() {
         if (showPerf) {
             // パフォーマンスを計算
             let prev = rate - change;
-            let perf = prev + change * 4;
+            let realChange = change;
+
+            if (isNewAccount) {
+                let idx = tr.length - 1 - i;
+
+                if (idx < bonus.length) {
+                    realChange = change - bonus[idx];
+
+                    prev = 1400 + [...Array(idx)].reduce((s, _, j) =>
+                        s + Number($(tr[tr.length - 1 - j])
+                            .find('td').eq(5).text()) - bonus[j], 0);
+                }
+            }
+
+            let perf = prev + realChange * 4;
             // 列を追加
             let $perf = $rate.clone();
             $perf.text(perf);
